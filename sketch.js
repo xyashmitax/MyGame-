@@ -35,6 +35,8 @@ function setup(){
   bg = createSprite(200,200,50,50);
   bg.addImage(backgroundImage);
   bg.scale = 2.6
+  bg.x = bg.x/2
+  //bg.velocityX = -3
   
   p1 = createSprite(50,300,10,10);
   p1.addImage(p1Image);
@@ -55,6 +57,12 @@ function setup(){
 
 function draw(){
   background(2,255,255);
+  
+  
+  bg.velocityX = -3
+  if(bg.x < 0){
+    bg.x = 200
+  }
   
   p1.velocityX = 0
   p1.velocityY = 0
